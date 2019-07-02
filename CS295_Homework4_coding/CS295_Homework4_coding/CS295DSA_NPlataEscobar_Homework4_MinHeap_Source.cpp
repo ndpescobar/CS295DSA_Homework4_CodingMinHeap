@@ -36,11 +36,11 @@ public:
 		int right = 2 * index + 2;
 		int min = index;
 		//check if left is smaller
-		if (left < size && hArrPtr[left] < hArrPtr[index]) {
+		if (left < size && hArrPtr[left].length() < hArrPtr[index].length()) {
 			min = left;
 		}
 		//check if right is smaller
-		if (right < size && hArrPtr[right] < hArrPtr[min]) {
+		if (right < size && hArrPtr[right].length() < hArrPtr[min].length()) {
 			min = right;
 		}
 		//check next pair, if index is not there
@@ -75,7 +75,7 @@ public:
 
 	void PrintHeap(int index) {
 		std::cout << "\nPrinting: ";
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; ++i) {
 			std::cout << hArrPtr[i] << " ";
 		}
 		std::cout << "\nPrinting Done" << std::endl;
@@ -109,11 +109,25 @@ int main() {
 	myHeap.AddValue("be");
 	myHeap.AddValue("coo!");
 	myHeap.PrintHeap(0);
-	std::cout << "Extracting the root: " << myHeap.ExtractRoot() << std::endl;
-	myHeap.PrintHeap(0);
 	std::cout << "Heapify!" << std::endl;
 	myHeap.Heapify(0);
 	myHeap.PrintHeap(0);
+	std::cout << "Extracting the root: " << myHeap.ExtractRoot() << std::endl;
+	myHeap.PrintHeap(0);
+
+	MinHeap mySecondHeap(6);
+	mySecondHeap.AddValue("92");
+	mySecondHeap.AddValue("digdu");
+	mySecondHeap.AddValue("Dig Dug");
+	mySecondHeap.AddValue("2910");
+	mySecondHeap.AddValue("galag");
+	mySecondHeap.AddValue("Galaga");
+	mySecondHeap.PrintHeap(0);
+	std::cout << "Heapify!" << std::endl;
+	mySecondHeap.Heapify(0);
+	mySecondHeap.PrintHeap(0);
+	std::cout << "Extracting the root: " << mySecondHeap.ExtractRoot() << std::endl;
+	mySecondHeap.PrintHeap(0);
 
 	//End Program
 	std::cout << "Double ENTER to EXIT:";
