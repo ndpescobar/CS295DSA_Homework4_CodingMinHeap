@@ -5,6 +5,14 @@
 #include <iostream>
 #include <string>
 
+class MinHeap {
+private:
+
+public:
+	MinHeap(){}
+	MinHeap() {}
+};
+
 int main() {
 
 	std::cout << "Double ENTER to EXIT:";
